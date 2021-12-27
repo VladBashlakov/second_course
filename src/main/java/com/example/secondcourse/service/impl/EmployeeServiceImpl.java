@@ -1,7 +1,7 @@
 package com.example.secondcourse.service.impl;
 
 import com.example.secondcourse.data.Employee;
-import com.example.secondcourse.exceptions.BadNameError;
+import com.example.secondcourse.exceptions.BadNameException;
 import com.example.secondcourse.exceptions.EmployeeNotFoundException;
 import com.example.secondcourse.service.DepartmentService;
 import com.example.secondcourse.service.EmployeeService;
@@ -49,10 +49,10 @@ public class EmployeeServiceImpl implements EmployeeService, DepartmentService {
 
     @Override
     public boolean check(String str) {
-        if (!StringUtils.isEmpty(str) && StringUtils.isAlpha(str)) {
+        if (StringUtils.isAlpha(str)) {
             return true;
         } else {
-            throw new BadNameError();
+            throw new BadNameException();
         }
     }
 

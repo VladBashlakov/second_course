@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
 
-public class BadNameError extends RuntimeException {
+public class BadNameException extends RuntimeException {
     private static final String DEFAULT_MESSAGE = "$$$$$$ BAD NAME $$$$$$";
 
-    public BadNameError() {
+    public BadNameException() {
         super(DEFAULT_MESSAGE);
     }
 }
