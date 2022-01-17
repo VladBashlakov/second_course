@@ -3,6 +3,7 @@ package com.example.secondcourse.controller;
 
 import com.example.secondcourse.data.Employee;
 import com.example.secondcourse.service.DepartmentService;
+import com.example.secondcourse.service.impl.DepartmentServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -16,7 +17,7 @@ import java.util.Map;
 
 public class DepartmentController {
 
-    private final DepartmentService departmentService;
+   private final DepartmentService departmentService;
 
     public DepartmentController(DepartmentService departmentService) {
         this.departmentService = departmentService;
@@ -32,7 +33,7 @@ public class DepartmentController {
         return departmentService.getEmployeeWithMaxSalary(department);
     }
 
-    @GetMapping("all")
+    @GetMapping("/all")
     Map<Integer, List<Employee>> getAllEmployeesByDepartment() {
         return departmentService.getAllEmployeesByDepartment();
     }

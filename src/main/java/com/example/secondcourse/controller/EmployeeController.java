@@ -14,6 +14,7 @@ import java.util.Map;
 @RequestMapping("/employee")
 @RestController
 public class EmployeeController {
+
     private final EmployeeService employeeService;
 
     public EmployeeController(EmployeeService employeeService) {
@@ -24,8 +25,7 @@ public class EmployeeController {
     public String showAdd(@RequestParam String firstName, @RequestParam String lastName) {
 
         employeeService.addEmployee(firstName, lastName);
-        return " сотрудник " + StringUtils.capitalize(firstName ) + " " + StringUtils.capitalize(lastName) + " успешно создан";
-
+        return " сотрудник " + StringUtils.capitalize(firstName) + " " + StringUtils.capitalize(lastName) + " успешно создан";
     }
 
     @GetMapping("/remove")
@@ -44,5 +44,6 @@ public class EmployeeController {
     public Map<Integer, Employee> printAll() {
         return employeeService.printAllEmployees();
     }
+
 }
 
