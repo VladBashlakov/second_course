@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 public interface DepartmentService {
+
     Employee getEmployeeWithMinSalary(int department);
+
 
     Employee getEmployeeWithMaxSalary(int department);
 

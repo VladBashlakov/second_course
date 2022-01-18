@@ -42,7 +42,7 @@ public class EmployeeController {
 
     @GetMapping("/printAll")
     public Map<Integer, Employee> printAll() {
-        return employeeService.printAllEmployees();
+        return employeeService.getAllEmployees();
     }
 
 }

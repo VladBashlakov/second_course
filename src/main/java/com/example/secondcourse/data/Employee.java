@@ -15,7 +15,8 @@ public class Employee {
 
 
     public Employee(String firstName, String lastName) {
-        this(firstName, lastName, 0, 0);
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Employee(String firstName, String lastName, int department, int salary) {
