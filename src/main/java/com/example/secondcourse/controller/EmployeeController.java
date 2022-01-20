@@ -22,10 +22,10 @@ public class EmployeeController {
     }
 
     @GetMapping("/add")
-    public String showAdd(@RequestParam String firstName, @RequestParam String lastName) {
+    public String showAdd(@RequestParam String firstName, @RequestParam String lastName, @RequestParam int department, @RequestParam int salary) {
 
-        employeeService.addEmployee(firstName, lastName);
-        return " сотрудник " + StringUtils.capitalize(firstName) + " " + StringUtils.capitalize(lastName) + " успешно создан";
+        employeeService.addEmployee(firstName, lastName, department,salary);
+        return " сотрудник " + StringUtils.capitalize(firstName) + " " + StringUtils.capitalize(lastName) +" "+department+" "+salary+" успешно создан";
     }
 
     @GetMapping("/remove")

@@ -23,17 +23,19 @@ public class DepartmentServiceTest {
     @BeforeEach
     public void setUp() {
         out = new DepartmentServiceImpl(employeeService);
+
+        when(employeeService.getAllEmployees().values())
+                .thenReturn(EMPLOYEES);
     }
 
     @Test
     public void getAllEmployees() {
-        when(out.getEmployeesFor(CORRECT_DEPARTMENT))
-                .thenReturn(EMPLOYEES);
 
-        assertEquals(EMPLOYEES, out.getEmployeesFor(CORRECT_DEPARTMENT));
+
+        assertEquals(EMPLOYEES, out.getAllEmployeesByDepartment());
         assertEquals(emptyList(), out.getEmployeesFor(WRONG_DEPARTMENT));
+//        assertIterableEquals(EMPLOYEES, out.getEmployeesFor(CORRECT_DEPARTMENT));
 
-        assertIterableEquals(EMPLOYEES, out.getEmployeesFor(CORRECT_DEPARTMENT));
     }
 
     @Test

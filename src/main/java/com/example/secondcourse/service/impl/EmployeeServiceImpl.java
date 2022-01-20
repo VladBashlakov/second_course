@@ -59,10 +59,12 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void addEmployee(String firstName, String lastName) {
+    public Employee addEmployee(String firstName, String lastName, int department, int salary) {
 
-        if (check(firstName) && check(lastName))
-            employees.put(getId(), new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName)));
+        if (check(firstName) && check(lastName)) {
+            employees.put(getId(), new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), department, salary));
+        }
+        return new Employee(StringUtils.capitalize(firstName), StringUtils.capitalize(lastName), department, salary);
     }
 
 
@@ -70,19 +72,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     public HashMap<Integer, Employee> getAllEmployees() {
         return (HashMap<Integer, Employee>) employees;
     }
-
-    @Override
-    public Employee addEmployee(String firstName1, String lastName1, int department1, int salary1) {
-        employees.put(getId(), new Employee(firstName1, lastName1, department1, salary1));
-        return new Employee(firstName1, lastName1, department1, salary1);
-    }
-
-    @Override
-    public Employee addEmployee(Employee employee) {
-        employees.put(getId(), employee);
-        return employee;
-    }
-
 
 }
 

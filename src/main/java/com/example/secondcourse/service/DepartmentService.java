@@ -10,7 +10,6 @@ public interface DepartmentService {
 
     Employee getEmployeeWithMinSalary(int department);
 
-
     Employee getEmployeeWithMaxSalary(int department);
 
     Collection<Employee> getEmployeesFor(int department);

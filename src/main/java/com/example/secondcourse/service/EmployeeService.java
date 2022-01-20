@@ -12,11 +12,6 @@ public interface EmployeeService {
 
     Employee getEmployee(Integer id);
 
-
-    void addEmployee(String firstName, String lastName);
-
-    Employee addEmployee(Employee employee);
-
     HashMap<Integer, Employee> getAllEmployees();
 
     boolean check(String str);

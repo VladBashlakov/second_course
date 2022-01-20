@@ -32,9 +32,9 @@ public class EmployeeServiceTest {
 
         out = new EmployeeServiceImpl();
 
-        out.addEmployee(employee1);
-        out.addEmployee(employee2);
-        out.addEmployee(employee3);
+        out.addEmployee(FIRST_NAME1, LAST_NAME1, DEPARTMENT1, SALARY1);
+        out.addEmployee(FIRST_NAME2, LAST_NAME2, DEPARTMENT2, SALARY2);
+        out.addEmployee(FIRST_NAME3, LAST_NAME3, DEPARTMENT3, SALARY3);
 
     }
 
@@ -48,7 +48,7 @@ public class EmployeeServiceTest {
         act.add(employee3);
 
         assertTrue(act.size() == exp.size() && act.containsAll(exp) && exp.containsAll(act));
-        assertEquals(employee1, out.addEmployee(employee1));
+        assertEquals(employee1, out.addEmployee(FIRST_NAME1, LAST_NAME1, DEPARTMENT1, SALARY1));
 
     }
 
